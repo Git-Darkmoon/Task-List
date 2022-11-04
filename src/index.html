@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>iTask List</title>
+    <title>iTask It</title>
     <link
       rel="shortcut icon"
       href="styles/taskFavicon.ico"
@@ -14,12 +14,13 @@
   </head>
   <body>
     <header>
-      <h1>Task List 2022</h1>
+      <h1>iTask It</h1>
       <form id="new-task-form">
         <input
           type="text"
           id="new-task-input"
-          placeholder="What do you have planned"
+          placeholder="What do you've planned"
+          autocomplete="off"
         />
         <input type="submit" id="new-task-submit" value="Add task" />
       </form>
@@ -29,29 +30,9 @@
       <section class="task-list">
         <h2>Tasks</h2>
 
-        <!-- <div id="tasks">
-          <div class="task">
-            <div class="content">
-              <input type="text" class="text" value="My shiny task" readonly />
-            </div>
-
-            <div class="actions">
-              <button class="edit">Edit</button>
-              <button class="delete">Delete</button>
-            </div>
-          </div>
-
-          <div class="task">
-            <div class="content">
-              <input type="text" class="text" value="My shiny task" readonly />
-            </div>
-
-            <div class="actions">
-              <button class="edit">Edit</button>
-              <button class="delete">Delete</button>
-            </div>
-          </div>
-        </div> -->
+        <div id="tasks">
+          <!-- Tasks to append  -->
+        </div>
       </section>
     </main>
   </body>

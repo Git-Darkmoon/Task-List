@@ -15,7 +15,7 @@ body {
 
 header {
   padding: 2rem 1rem;
-  min-width: 800px;
+  min-width: 26.75rem;
   width: 100%;
   margin: 0 auto;
 }
@@ -29,6 +29,7 @@ header h1 {
 
 #new-task-form {
   display: flex;
+  margin-inline: 0.5rem;
 }
 
 input,
