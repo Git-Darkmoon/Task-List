@@ -9,7 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #384252;
+  background-color: hsl(217deg, 19%, 27%);
   color: hsl(0deg, 0%, 85%);
 }
 
@@ -78,10 +78,10 @@ button {
 }
 
 #new-task-submit {
-  color: #ec4699;
+  color: hsl(330deg, 81%, 60%);
   font-size: 1.25rem;
   font-weight: 700;
-  background-image: linear-gradient(to right, #ec4699, #895af6);
+  background-image: linear-gradient(to right, hsl(330deg, 81%, 60%), hsl(258deg, 90%, 66%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   cursor: pointer;
@@ -123,7 +123,7 @@ main {
 .task-list .top-bar button {
   background-color: transparent;
   cursor: pointer;
-  color: #ec4699;
+  color: hsl(330deg, 81%, 60%);
   transition: 0.4s;
 }
 .task-list .top-bar button:hover {
@@ -157,11 +157,11 @@ main {
 }
 
 #tasks .task .content .text:not(:-moz-read-only) {
-  color: #ec4699;
+  color: hsl(330deg, 81%, 60%);
 }
 
 #tasks .task .content .text:not(:read-only) {
-  color: #ec4699;
+  color: hsl(330deg, 81%, 60%);
 }
 
 #tasks .task .actions {
@@ -187,8 +187,8 @@ main {
 }
 
 .task .actions .edit {
-  color: #895af6;
-  background-image: linear-gradient(to right, #ec4699, #895af6);
+  color: hsl(258deg, 90%, 66%);
+  background-image: linear-gradient(to right, hsl(330deg, 81%, 60%), hsl(258deg, 90%, 66%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
