@@ -9,13 +9,13 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: hsl(217deg, 19%, 27%);
+  background-color: #384252;
   color: hsl(0deg, 0%, 85%);
 }
 
 header {
   padding: 2rem 1rem;
-  min-width: 26.75rem;
+  min-width: 33.625rem;
   width: 100%;
   margin: 0 auto;
 }
@@ -30,8 +30,24 @@ header h1 {
 #new-task-form {
   display: flex;
   margin-inline: 0.5rem;
+  min-width: 33.625rem;
+  max-width: 85vw;
 }
 
+@media screen and (max-width: 43rem) {
+  #new-task-form {
+    min-width: 22rem;
+  }
+}
+@media screen and (max-width: 25rem) {
+  #new-task-form {
+    flex-direction: column;
+    min-width: 18rem;
+  }
+  #new-task-submit {
+    margin-top: 1.5rem;
+  }
+}
 input,
 button {
   -webkit-appearance: none;
@@ -62,10 +78,10 @@ button {
 }
 
 #new-task-submit {
-  color: hsl(330deg, 81%, 60%);
+  color: #ec4699;
   font-size: 1.25rem;
   font-weight: 700;
-  background-image: linear-gradient(to right, hsl(330deg, 81%, 60%), hsl(258deg, 90%, 66%));
+  background-image: linear-gradient(to right, #ec4699, #895af6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   cursor: pointer;
@@ -92,11 +108,29 @@ main {
   padding: 1rem;
 }
 
-.task-list h2 {
+.task-list .top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.task-list .top-bar h2 {
   font-size: 1.5rem;
   font-weight: 300;
   color: hsl(220deg, 9%, 46%);
   margin-bottom: 1rem;
+}
+.task-list .top-bar button {
+  background-color: transparent;
+  cursor: pointer;
+  color: #ec4699;
+  transition: 0.4s;
+}
+.task-list .top-bar button:hover {
+  opacity: 0.8;
+}
+.task-list .top-bar button:active {
+  opacity: 0.6;
 }
 
 #tasks .task {
@@ -106,6 +140,10 @@ main {
   padding: 1rem;
   border-radius: 1rem;
   margin-bottom: 1rem;
+}
+
+#tasks .task .content {
+  flex: 1 1 0%;
 }
 
 #tasks .task .content .text {
@@ -119,11 +157,11 @@ main {
 }
 
 #tasks .task .content .text:not(:-moz-read-only) {
-  color: hsl(330deg, 81%, 60%);
+  color: #ec4699;
 }
 
 #tasks .task .content .text:not(:read-only) {
-  color: hsl(330deg, 81%, 60%);
+  color: #ec4699;
 }
 
 #tasks .task .actions {
@@ -149,8 +187,8 @@ main {
 }
 
 .task .actions .edit {
-  color: hsl(258deg, 90%, 66%);
-  background-image: linear-gradient(to right, hsl(330deg, 81%, 60%), hsl(258deg, 90%, 66%));
+  color: #895af6;
+  background-image: linear-gradient(to right, #ec4699, #895af6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

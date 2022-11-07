@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      src="https://kit.fontawesome.com/35ef313ba4.js"
+      crossorigin="anonymous"
+    ></script>
     <title>iTask It</title>
     <link
       rel="shortcut icon"
@@ -21,6 +26,7 @@
           id="new-task-input"
           placeholder="What do you've planned"
           autocomplete="off"
+          autocapitalize="on"
         />
         <input type="submit" id="new-task-submit" value="Add task" />
       </form>
@@ -28,7 +34,10 @@
 
     <main>
       <section class="task-list">
-        <h2>Tasks</h2>
+        <div class="top-bar">
+          <h2>Tasks</h2>
+          <button id="task-list__clear">Delete all <i class="fa-solid fa-trash"></i></i></button>
+        </div>
 
         <div id="tasks">
           <!-- Tasks to append  -->

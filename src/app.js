@@ -1,16 +1,51 @@
-// window.addEventListener("load", () => {
 const form = document.getElementById("new-task-form")
 const input = document.getElementById("new-task-input")
 const list_el = document.getElementById("tasks")
-// })
+const clear_btn = document.getElementById("task-list__clear")
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault()
+clear_btn.addEventListener("click", () => {
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    background: "#384252",
+    color: "#d9d9d9",
+    showCancelButton: true,
+    confirmButtonColor: "#28d74b",
+    cancelButtonColor: "#ec4699",
+    confirmButtonText: "Yes, delete all!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: "Deleted",
+        text: "Your data has been erased.",
+        icon: "success",
+        background: "#384252",
+        color: "#d9d9d9",
+      })
+      list_el.innerHTML = ""
+    }
+  })
+})
 
+const createTask = () => {
   const task = input.value
 
   if (!task) {
-    alert("Please fill out the task")
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 1750,
+      timerProgressBar: true,
+      background: "#6b7280",
+      color: "#d9d9d9",
+    })
+
+    Toast.fire({
+      icon: "error",
+      title: "Invalid input...",
+    })
     return
   }
 
@@ -48,8 +83,6 @@ form.addEventListener("submit", (e) => {
 
   list_el.appendChild(task_el)
 
-  input.value = ""
-
   task__edit_btn.addEventListener("click", () => {
     if (task__edit_btn.innerText.toLowerCase() == "edit") {
       task__input_el.removeAttribute("readonly")
@@ -64,4 +97,12 @@ form.addEventListener("submit", (e) => {
   task__delete_btn.addEventListener("click", () => {
     list_el.removeChild(task_el)
   })
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault()
+
+  createTask()
+
+  input.value = ""
 })
